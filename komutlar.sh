@@ -220,35 +220,36 @@ echo -e "curl -sS http://localhost:${CustomPort}57/net_info | jq -r \".result.pe
 echo -e '```'
 echo -e "<h1 align="center"> Service Yönetimi </h1>"
 echo " "
-echo "Servisi Etkinleştir"
+echo "## Servisi Etkinleştir"
 echo -e '```'
 echo "sudo systemctl enable $BinaryName"
 echo -e '```'
-echo "Servisi Devre Dışı Bırak"
+echo "## Servisi Devre Dışı Bırak"
 echo -e '```'
 echo "sudo systemctl disable $BinaryName"
 echo -e '```'
-echo "Servisi Başlat"
+echo "## Servisi Başlat"
 echo -e '```'
 echo "sudo systemctl start $BinaryName"
 echo -e '```'
-echo "Servisi Durdur"
+echo "## Servisi Durdur"
 echo -e '```'
 echo "sudo systemctl stop $BinaryName"
 echo -e '```'
-echo "Servisi Yeniden Başlat"
+echo "## Servisi Yeniden Başlat"
 echo -e '```'
 echo "sudo systemctl restart $BinaryName"
 echo -e '```'
-echo "Servis Durumunu Kontrol Et"
+echo "## Servis Durumunu Kontrol Et"
 echo -e '```'
 echo "sudo systemctl status $BinaryName"
 echo -e '```'
-echo "Servis Loglarını Kontrol Et"
+echo "## Servis Loglarını Kontrol Et"
 echo -e '```'
 echo "sudo journalctl -u $BinaryName -f --no-hostname -o cat"
 echo -e '```'
 echo -e "<h1 align="center"> Node Silmek </h1>"
+echo " "
 echo -e '```'
 echo -e "sudo systemctl stop $BinaryName && sudo systemctl disable $BinaryName && sudo rm /etc/systemd/system/$BinaryName.service && sudo systemctl daemon-reload && rm -rf \$HOME/.$BinaryName && rm -rf \$HOME/$NodeName && sudo rm -rf \$(which $BinaryName)"
 echo -e '```'
