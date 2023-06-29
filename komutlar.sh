@@ -1,4 +1,5 @@
 #!/bin/bash
+# böyle çalıştır: ./komutlar.sh > komutlar.md
 # değişkenler
 BinaryName="noded"
 ChainID="chain-id"
