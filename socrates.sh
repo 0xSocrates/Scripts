@@ -1,5 +1,5 @@
 sleep 1
-echo -e '\e[0;35m'
+echo -e '\e[0;32m'
 echo -e ' '
 echo -e '                  __                           _              '
 echo -e '                 / _\  ___    ___  _ __  __ _ | |_  ___  ___  '
