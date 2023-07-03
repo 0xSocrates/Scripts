@@ -159,7 +159,7 @@ echo "sed -i \\"
 echo "  -e 's|^pruning *=.*|pruning = \"custom\"|' \\"
 echo "  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = \"100\"|' \\"
 echo "  -e 's|^pruning-keep-every *=.*|pruning-keep-every = \"0\"|' \\"
-echo "  -e 's|^pruning-interval *=.*|pruning-interval = \"19\"|' \\"
+echo "  -e 's|^pruning-interval *=.*|pruning-interval = \"10\"|' \\"
 echo "  \$HOME/.$BinaryName/config/app.toml"
 echo -e '```'
 echo -e "## İndexer Aç"
