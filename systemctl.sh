@@ -5,7 +5,7 @@ sudo systemctl disable $BinaryName
 sudo rm -rf /etc/systemd/system/$BinaryName.service
 sudo tee /etc/systemd/system/$BinaryName.service > /dev/null <<EOF
 [Unit]
-Description=$Nodename Node
+Description=$NodeName Node
 After=network-online.target
 [Service]
 User=$USER
