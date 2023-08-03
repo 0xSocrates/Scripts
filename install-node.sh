@@ -87,16 +87,20 @@ removenode
 curl -sSL https://raw.githubusercontent.com/0xSocrates/Scripts/main/preparing-server.sh | bash
 echo -e "\e[0;33mGüncellendi, Kütüphaneler Kuruldu, $(go version) Kuruldu\033[0m"
 sleep 2
+echo " "
 echo -e "\e[0;34m$BinaryName Kuruluyor\033[0m"
 install_binary
 echo -e "\e[0;33m$BinaryName $($BinaryName version) Kuruldu\033[0m"
 sleep 2
 init
+echo " "
 echo -e "\e[0;34m$BinaryName Başlatıldı\033[0m"
 sleep 2
+echo " "
 echo -e "\e[0;34mYapılandırma Dosyası Ayarları Yapılıyor\033[0m"
 config
 ge_ad_se_pe
+sleep 2
 echo -e "\e[0;33mTamamlandı\033[0m"
 exec > /dev/null 2>&1
 sudo tee /etc/systemd/system/$BinaryName.service > /dev/null <<EOF
@@ -112,11 +116,13 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+sleep 2
 systemctl daemon-reload
 systemctl enable $BinaryName
 systemctl start $BinaryName
 systemctl restart $BinaryName
 exec > /dev/tty 2>&1
+echo " "
 echo -e "\e[0;34mNode Başlatıldı. Logları takip etmek için: \033[0;33m           sudo journalctl -u $BinaryName -fo cat\033[0m"
 sleep 2
 echo " "
