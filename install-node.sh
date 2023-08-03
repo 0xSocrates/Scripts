@@ -122,3 +122,4 @@ sleep 2
 echo " "
 curl -sSL https://raw.githubusercontent.com/0xSocrates/Scripts/main/socrates.sh | bash
 sleep 2
+source $HOME/.bash_profile
