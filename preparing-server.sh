@@ -1,5 +1,4 @@
 #!/bin/bash
-exec > /dev/null 2>&1
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt install curl tar wget tmux htop net-tools clang pkg-config libssl-dev jq build-essential git screen make ncdu -y
 cd $HOME
@@ -10,5 +9,4 @@ echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
 echo 'export GO111MODULE=on' >> $HOME/.bash_profile
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
 rm -rf go1.20.4.linux-amd64.tar.gz
-exec > /dev/tty 2>&1
 source $HOME/.bash_profile
