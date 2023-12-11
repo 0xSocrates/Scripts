@@ -65,7 +65,27 @@ sleep 2
 echo -e ''
 }
 
-
+service() {
+exec > /dev/null 2>&1
+sudo tee /etc/systemd/system/$BinaryName.service > /dev/null <<EOF
+[Unit]
+Description=$NodeName Node
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which $BinaryName) start --home $HOME/$DirectName --chain-id $ChainID
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl enable $BinaryName
+systemctl start $BinaryName
+systemctl restart $BinaryName
+exec > /dev/tty 2>&1
+}
 
 
 
