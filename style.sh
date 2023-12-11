@@ -14,3 +14,10 @@ print_color() {
 # print_color $renk "mesaj"
 # örn: 
 # print_color $Blue "Bu mesajı mavi renke yaz andından terminal normal renkte devam eder"
+
+
+info() {
+echo -e "${Green}Node Başlatıldı. Logları Görüntülemek İçin:${Yellow}           sudo journalctl -u $BinaryName -fo cat ${NC]"
+sleep 2
+echo " "
+}
