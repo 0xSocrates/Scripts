@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt install curl tar wget tmux htop net-tools clang pkg-config libssl-dev jq build-essential git screen make ncdu -y
+sudo apt install curl tar wget tmux htop net-tools clang pkg-config libssl-dev jq build-essential git screen make ncdu liblz4-tool -y
 cd $HOME
 wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
