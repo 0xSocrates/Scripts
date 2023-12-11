@@ -20,7 +20,7 @@ print_color $Blue "$BinaryName $($BinaryName version) Kuruldu."
 }
 
 snapshot() {
-print_color $Blue "Core Node Chain Services Snapshot İndiriliyor..."
+print_color $Blue "Snapshot İndiriliyor..."
 sleep 1
 URL=https://snapshots-testnet.stake-town.com/cascadia/cascadia_11029-1_latest.tar.lz4
 curl -L $URL | lz4 -dc - | tar -xf - -C $HOME/.cascadiad
