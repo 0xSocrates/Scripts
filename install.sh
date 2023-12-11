@@ -10,7 +10,7 @@ prepare_server
 install_binary
 init
 config
-snapshot #eğer snap aktif değilse bu satırı sil
+snapshot
 service
 info
 source $HOME/.bash_profile
