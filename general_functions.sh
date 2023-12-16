@@ -41,6 +41,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile &
 rm -rf go1.20.4.linux-amd64.tar.gz
 source $HOME/.bash_profile
 print_color $Yellow "Güncellendi, Kütüphaneler Kuruldu, go version go1.20.4 linux/amd64 Kuruldu"
+sleep 1
 }
 
 
