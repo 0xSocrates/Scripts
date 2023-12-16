@@ -89,7 +89,10 @@ exec > /dev/tty 2>&1
 }
 
 
-
+lastinfo() {
+print_color $Green "Node Başlatıldı" sleep 1
+print_color $Green "Logları Görüntülemek İçin:         sudo journalctl -u $BinaryName -fo cat" sleep 1
+}
 
 
 
