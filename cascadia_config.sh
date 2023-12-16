@@ -16,7 +16,7 @@ cd $HOME/cascadia || return
 git checkout v0.1.9
 make install
 exec > /dev/tty 2>&1
-print_color $Blue "$BinaryName $($BinaryName version) Kuruldu."
+print_color $Yellow "$BinaryName $($BinaryName version) Kuruldu."
 sleep 1
 }
 
