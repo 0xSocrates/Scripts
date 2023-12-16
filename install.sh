@@ -12,4 +12,5 @@ init
 config
 snapshot
 service
+lastinfo
 source $HOME/.bash_profile
