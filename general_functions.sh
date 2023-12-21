@@ -74,7 +74,7 @@ Description=$NodeName Node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$(which $BinaryName) start --home $HOME/$DirectName --chain-id $ChainID
+ExecStart=$(which $BinaryName) start --home $HOME/$DirectName
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
