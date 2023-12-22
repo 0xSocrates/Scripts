@@ -26,21 +26,50 @@ rm -rf $(which $BinaryName)
 exec > /dev/tty 2>&1
 }
 
+
+go_kurulum(){
+
+ARCH=$(uname -m)
+
+if [ "$ARCH" = "x86_64" ]; then
+    # AMD64 mimarisi için
+    rm -rf /usr/local/go
+    wget https://golang.org/dl/go1.20.4.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
+    rm -rf go1.20.4.linux-amd64.tar.gz
+elif [ "$ARCH" = "aarch64" ]; then
+    # ARM64 mimarisi için
+    rm -rf /usr/local/go
+    wget https://golang.org/dl/go1.20.4.linux-arm64.tar.gz
+    sudo tar -C /usr/local -xzf go1.20.4.linux-arm64.tar.gz
+    rm -rf go1.20.4.linux-arm64.tar.gz
+else
+    echo "Bu mimari go kurulumunu desteklenmiyor."
+    exit 1
+fi
+echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
+echo 'export GO111MODULE=on' >> $HOME/.bash_profile
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
+echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
+source $HOME/.bash_profile
+}
+
+
+
+
+
+
+
+
 prepare_server() {
 print_color $Blue "Sunucu Hazırlanıyor..."
 sleep 1
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt install curl tar wget tmux htop net-tools clang pkg-config libssl-dev jq build-essential git screen make ncdu liblz4-tool -y
 cd $HOME
-wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
-echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
-echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
-echo 'export GO111MODULE=on' >> $HOME/.bash_profile
-echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
-rm -rf go1.20.4.linux-amd64.tar.gz
+go_kurulum
 source $HOME/.bash_profile
-print_color $Yellow "Güncellendi, Kütüphaneler Kuruldu, go version go1.20.4 linux/amd64 Kuruldu"
+print_color $Yellow "Güncellendi, Kütüphaneler Kuruldu, (go version) Kuruldu"
 sleep 1
 }
 
