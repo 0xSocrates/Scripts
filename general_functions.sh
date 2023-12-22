@@ -29,15 +29,15 @@ exec > /dev/tty 2>&1
 
 go_kurulum(){
 
-ARCH=$(uname -m)
+MIMARI=$(uname -m)
 
-if [ "$ARCH" = "x86_64" ]; then
+if [ "$MIMARI" = "x86_64" ]; then
     # AMD64 mimarisi için
     rm -rf /usr/local/go
     wget https://golang.org/dl/go1.20.4.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
     rm -rf go1.20.4.linux-amd64.tar.gz
-elif [ "$ARCH" = "aarch64" ]; then
+elif [ "$MIMARI" = "aarch64" ]; then
     # ARM64 mimarisi için
     rm -rf /usr/local/go
     wget https://golang.org/dl/go1.20.4.linux-arm64.tar.gz
