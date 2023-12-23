@@ -69,7 +69,7 @@ sudo apt install curl tar wget tmux htop net-tools clang pkg-config libssl-dev j
 cd $HOME
 go_kurulum
 source $HOME/.bash_profile
-print_color $Yellow "Güncellendi, Kütüphaneler Kuruldu, (go version) Kuruldu"
+print_color $Yellow "Güncellendi, Kütüphaneler Kuruldu, $(go version) Kuruldu"
 sleep 1
 }
 
