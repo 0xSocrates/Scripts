@@ -11,6 +11,4 @@ echo "████████▀   ▀██████▀    ███    █
 echo "                        ███    ███                                                               ";
 echo ""
 echo -e '\e[0m' 
-echo -e ''
-echo -e ''
-sleep 4
+sleep 3
